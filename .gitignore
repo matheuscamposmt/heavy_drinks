@@ -1,5 +1,9 @@
 # txt files
 *.txt
 
+# data
+clean_tac/
+raw_tac/
+
 # custom
-phone_types.csv
+*.csv
