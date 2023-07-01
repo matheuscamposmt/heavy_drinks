@@ -1,0 +1,5 @@
+# txt files
+*.txt
+
+# custom
+phone_types.csv
