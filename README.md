@@ -1,6 +1,6 @@
 # Bar Crawl: Detecting Heavy Drinking Dataset
 
-This dataset, originated from the paper "[Bar Crawl: Detecting Heavy Drinking](https://doi.org/10.24432/C5TK6G.)" contains accelerometer and transdermal alcohol content (TAC) data collected during a college bar crawl. The dataset is used to predict heavy drinking episodes using mobile data.
+This dataset, originated from the paper "[Bar Crawl: Detecting Heavy Drinking](https://doi.org/10.24432/C5TK6G)" contains accelerometer and transdermal alcohol content (TAC) data collected during a college bar crawl. The dataset is used to predict heavy drinking episodes using mobile data.
 
 ![Alcohol](https://rivierabarcrawltours.com/wp-content/uploads/2020/05/what-is-a-pub-crawl-meaning-pic2.jpg)
 
