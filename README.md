@@ -31,7 +31,7 @@ This dataset, originated from the paper "[Bar Crawl: Detecting Heavy Drinking](h
 
 ![Bar Crawl](https://www.chicagomag.com/wp-content/archive/Chicago-Magazine/December-2018/A-Celebration-of-Winter/Go-on-the-Ultimate-Indoor-Bar-Crawl/map2.png)
 
-A bar crawl is an event where participants visit multiple bars or pubs in a single night, typically consuming alcoholic beverages at each venue. In college, the participants, typically college students, visit multiple bars or pubs in a single night, usually consuming alcoholic beverages at each venue. It is a social activity often organized by student groups or as part of campus events. College bar crawls provide an opportunity for students to socialize, celebrate, and experience the nightlife surrounding their campus.
+A bar crawl is an event where participants visit multiple bars or pubs in a single night, typically consuming alcoholic beverages at each venue. In college, it is a social activity often organized by student groups or as part of campus events. College bar crawls provide an opportunity for students to socialize, celebrate, and experience the nightlife surrounding their campus.
 
 During a bar crawl, participants may consume varying amounts of alcohol, and heavy drinking episodes can occur. This dataset aims to predict heavy drinking episodes by analyzing accelerometer data from smartphones and transdermal alcohol content (TAC) data collected through SCRAM ankle bracelets.
 
