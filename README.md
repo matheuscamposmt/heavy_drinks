@@ -1,96 +1,82 @@
-# Bar Crawl: Detecting Heavy Drinking Dataset
+# Projeto de Detecção de Consumo Excessivo de Álcool em Roteiros de Bares
 
-Originated from "[Bar Crawl: Detecting Heavy Drinking](https://doi.org/10.24432/C5TK6G)", this dataset contains accelerometer and transdermal alcohol content (TAC) data collected during a college bar crawl. The dataset is used to predict heavy drinking episodes using mobile data.
+## Visão Geral
 
-![Alcohol](https://rivierabarcrawltours.com/wp-content/uploads/2020/05/what-is-a-pub-crawl-meaning-pic2.jpg)
+Este projeto tem como objetivo desenvolver um modelo de aprendizado de máquina para a detecção de episódios de consumo excessivo de álcool durante roteiros de bares universitários. O conjunto de dados inclui informações de acelerômetros e conteúdo alcoólico transdérmico (TAC) coletados durante eventos de roteiros de bares. O foco principal é prever e identificar momentos de consumo excessivo de álcool, utilizando dados móveis e informações de TAC.
 
-## Dataset Characteristics
+## Destaques do Projeto
 
-- Type: Multivariate, Time-Series
-- Subject Area: Life
-- Associated Tasks: Classification, Regression
-- Attribute Type: Real
+- Utilizou-se uma combinação de técnicas de processamento de dados e algoritmos de aprendizado de máquina para construir e avaliar os modelos de detecção de consumo excessivo de álcool.
+- Dado o foco na identificação precisa, optou-se pelo uso de modelos de classificação e regressão.
+- Alcançou-se uma média de TAC de 0,065 +/- 0,182 e uma máxima de 0,443, com quartis internos de 0,002, 0,029 e 0,092.
+- O tempo médio até a última ingestão de bebida foi calculado como 16,1 +/- 6,9 horas.
 
-## Dataset Details
+## Conjunto de Dados
 
-- **Donation Date**: 2/23/2020
-- **Number of Instances**: 14,057,567
-- **Number of Attributes**: 15
+Este projeto utilizou um conjunto de dados obtido do estudo "[Bar Crawl: Detecting Heavy Drinking](https://doi.org/10.24432/C5TK6G)", que contém dados de acelerômetros e TAC coletados durante roteiros de bares universitários. O conjunto de dados consiste em registros de acelerômetros e leituras de TAC em intervalos de tempo, representando diferentes participantes e momentos durante os eventos.
 
-## Dataset Information
+## Informações sobre o Conjunto de Dados
 
-### Relevant Information
+### Informações Relevantes
 
-- All data in this dataset is fully anonymized.
-- Originally collected from 19 participants, but TAC readings of 6 participants were deemed unusable.
-- The dataset includes data from the remaining 13 participants.
-- Accelerometer data was collected from smartphones at a sampling rate of 40Hz.
-- TAC data was collected using SCRAM ankle bracelets at 30-minute intervals.
+- Todos os dados presentes no conjunto foram totalmente anonimizados.
+- Inicialmente coletados de 19 participantes, com a exclusão dos dados de TAC de 6 participantes devido à sua inutilização.
+- Foram considerados os dados de acelerômetros de 13 participantes restantes.
+- Dados de acelerômetros foram coletados a partir de smartphones com uma taxa de amostragem de 40Hz.
+- Dados de TAC foram obtidos através de pulseiras de tornozelo SCRAM em intervalos de 30 minutos.
 
-### Bar Crawl
+### *Bar Crawl*
 
 ![Bar Crawl](https://www.chicagomag.com/wp-content/archive/Chicago-Magazine/December-2018/A-Celebration-of-Winter/Go-on-the-Ultimate-Indoor-Bar-Crawl/map2.png)
 
-A bar crawl is an event where participants visit multiple bars or pubs in a single night, typically consuming alcoholic beverages at each venue. In college, it is a social activity often organized by student groups or as part of campus events. College bar crawls provide an opportunity for students to socialize, celebrate, and experience the nightlife surrounding their campus.
+A *bar crawl* é um evento em que os participantes visitam vários bares ou pubs em uma única noite, consumindo bebidas alcoólicas em cada local. Na universidade, esse evento é uma atividade social muitas vezes organizada por grupos de estudantes ou como parte de eventos no campus. Esses roteiros proporcionam aos estudantes a oportunidade de socializar, comemorar e experimentar a vida noturna local.
 
-During a bar crawl, participants may consume varying amounts of alcohol, and heavy drinking episodes can occur. This dataset aims to predict heavy drinking episodes by analyzing accelerometer data from smartphones and transdermal alcohol content (TAC) data collected through SCRAM ankle bracelets.
+Durante um roteiro de bares, os participantes podem consumir quantidades variáveis de álcool, e momentos de consumo excessivo podem ocorrer. O objetivo deste projeto é prever esses momentos de consumo excessivo, analisando dados de acelerômetros de smartphones e informações de TAC coletadas por meio de pulseiras de tornozelo SCRAM.
 
-### Accelerometer Data
+### Dados de Acelerômetros
 
-Accelerometer data was collected from a mix of 11 iPhones and 2 Android phones. The data file "all_accelerometer_data_pids_13.csv" contains 5 columns: timestamp, participant ID, and samples from each axis of the accelerometer (x, y, z).
+Os dados de acelerômetros foram coletados de uma variedade de smartphones, incluindo iPhones e Androids. O arquivo de dados "all_accelerometer_data_pids_13.csv" contém informações de tempo, ID do participante e amostras de cada eixo do acelerômetro (x, y, z).
 
-### TAC Data
+### Dados de TAC
 
-TAC readings are available in two directories: "raw_tac" and "clean_tac." The "raw_tac" directory contains the raw TAC readings, while the "clean_tac" directory contains processed TAC readings. The cleaned TAC readings have two columns: timestamp and TAC reading. The cleaned TAC readings were processed as follows:
-1. Zero-phase low-pass filter was applied to smooth noise without shifting phase.
-2. The TAC readings were shifted backwards by 45 minutes to align the labels with the true intoxication of the participants.
+As leituras de TAC estão disponíveis em dois diretórios: "raw_tac" e "clean_tac". O diretório "raw_tac" contém as leituras de TAC não processadas, enquanto o diretório "clean_tac" contém leituras de TAC processadas. As leituras de TAC processadas incluem informações de tempo e leituras de TAC, com ajustes para melhor alinhar os dados.
 
-### Phone Types
+### Tipos de Smartphones
 
-The file "phone_types.csv" provides information about the phone types used during data collection. It contains two columns: participant ID and phone type (iPhone or Android).
+O arquivo "phone_types.csv" fornece informações sobre os tipos de smartphones usados durante a coleta de dados. Ele inclui a correspondência entre o ID do participante e o tipo de smartphone (iPhone ou Android).
 
-### Additional Information
+### Informações Adicionais
 
-For more detailed information on how the data was processed, refer to the referenced study: [The determination of blood alcohol concentration by transdermal measurement](https://www.scramsystems.com/images/uploads/general/research/the-determination-of-blood-alcohol-concentrationby-transdermal-measurement.pdf) by J. Robert Zettl (2002).
+Para obter detalhes completos sobre o processamento dos dados, consulte o estudo referenciado: [The determination of blood alcohol concentration by transdermal measurement](https://www.scramsystems.com/images/uploads/general/research/the-determination-of-blood-alcohol-concentrationby-transdermal-measurement.pdf) por J. Robert Zettl (2002).
 
-## Attribute Information
+## Informações sobre Atributos
 
-### Main Attributes
+### Principais Atributos
 
 1. `all_accelerometer_data_pids_13.csv`:
-   - `time`: Integer, Unix timestamp in milliseconds.
-   - `pid`: Symbolic, participant ID from the 13 categories listed in `pids.txt`.
-   - `x`: Continuous, time-series data from the x-axis of the accelerometer.
-   - `y`: Continuous, time-series data from the y-axis of the accelerometer.
-   - `z`: Continuous, time-series data
-
- from the z-axis of the accelerometer.
+   - `time`: Inteiro, carimbo de data/hora Unix em milissegundos.
+   - `pid`: Simbólico, ID do participante das 13 categorias listadas em `pids.txt`.
+   - `x`: Contínuo, dados de séries temporais do eixo x do acelerômetro.
+   - `y`: Contínuo, dados de séries temporais do eixo y do acelerômetro.
+   - `z`: Contínuo, dados de séries temporais do eixo z do acelerômetro.
 
 2. `clean_tac/*.csv`:
-   - `timestamp`: Integer, Unix timestamp in seconds.
-   - `TAC_Reading`: Continuous, time-series data of transdermal alcohol content.
+   - `timestamp`: Inteiro, carimbo de data/hora Unix em segundos.
+   - `TAC_Reading`: Contínuo, dados de séries temporais do conteúdo alcoólico transdérmico.
 
 3. `phone_types.csv`:
-   - `pid`: Symbolic, participant ID from the 13 categories listed in `pids.txt`.
-   - `phonetype`: Symbolic, phone type (iPhone or Android).
+   - `pid`: Simbólico, ID do participante das 13 categorias listadas em `pids.txt`.
+   - `phonetype`: Simbólico, tipo de smartphone (iPhone ou Android).
 
-### Other Attributes
+### Outros Atributos
 
-Additional attributes can be found in the `raw` directory in the form of Excel files. These attributes include:
-- TAC Level: Continuous, time-series data representing the level of transdermal alcohol content.
-- IR Voltage: Continuous, time-series data related to infrared voltage.
-- Temperature: Continuous, time-series data representing temperature.
-- Time: Datetime information.
-- Date: Datetime information.
+Atributos adicionais podem ser encontrados no diretório `raw`, em formato de arquivos Excel. Eles incluem informações sobre o nível de TAC, voltagem infravermelha, temperatura, data e hora.
 
-## Missing Attribute Values
+## Distribuição do Alvo
 
-None
+A variável alvo, TAC (Conteúdo Alcoólico Transdérmico), é medida em g/dl, onde 0,08 é o limite legal para intoxicação ao dirigir.
+- Média de TAC: 0,065 +/- 0,182
+- Máximo TAC: 0,443
+- Quartis Internos do TAC: 0,002, 0,029, 0,092
+- Média de Tempo até a Última Bebida: 
 
-## Target Distribution
-
-The target variable, TAC (Transdermal Alcohol Content), is measured in g/dl, where 0.08 is the legal limit for intoxication while driving.
-- Mean TAC: 0.065 +/- 0.182
-- Max TAC: 0.443
-- TAC Inner Quartiles: 0.002, 0.029, 0.092
-- Mean Time-to-last-drink: 16.1 +/- 6.9 hrs
